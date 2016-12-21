@@ -92,7 +92,7 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 		else if( position == 3 )
 			viewHolder.iv_image.setImageResource(R.drawable.vibration);
 		else 
-			viewHolder.iv_image.setImageResource(getItem(position).image);
+			viewHolder.iv_image.setImageResource(R.drawable.action);
 
 		return v;
 	}

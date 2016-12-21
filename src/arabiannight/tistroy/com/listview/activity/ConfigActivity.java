@@ -214,7 +214,7 @@ public class ConfigActivity extends Activity {
 			mEtMotor4Hold.setText(String.valueOf(mMotion.Motors[3].hold_time));
 			mEtMotor4Repeat.setText(String.valueOf(mMotion.Motors[3].repeat_count));
 	
-			mSpSoundType.setSelection(mMotion.Sound.type);
+			mSpSoundType.setSelection(mMotion.Sound.index);
 			mEtSoundDelay.setText(String.valueOf(mMotion.Sound.delay_time));
 			
 			mEtLedBlink.setText(String.valueOf(mMotion.Led.blink));
@@ -258,7 +258,7 @@ public class ConfigActivity extends Activity {
 		mMotion.Motors[3].hold_time = Byte.parseByte( mEtMotor4Hold.getText().toString());
 		mMotion.Motors[3].repeat_count = Byte.parseByte( mEtMotor4Repeat.getText().toString());
 
-		mMotion.Sound.type = (byte) mSpSoundType.getSelectedItemPosition();
+		mMotion.Sound.index = (byte) mSpSoundType.getSelectedItemPosition();
 		mMotion.Sound.delay_time = Byte.parseByte( mEtSoundDelay.getText().toString());
 		
 		mMotion.Led.blink =  Byte.parseByte( mEtLedBlink.getText().toString());
