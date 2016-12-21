@@ -226,40 +226,38 @@ public class ConfigActivity extends Activity {
 		mMotion.Sensor.type = (byte) mSpSensorType.getSelectedItemPosition(); 
 		mMotion.Sensor.value = Byte.parseByte(mEtSensorValue.getText().toString());
 		
-
 		mMotion.Motors[0].angle_init = Byte.parseByte( mEtMotor1Init.getText().toString());
+		mMotion.Motors[0].angle_start = Byte.parseByte(mEtMotor1Start.getText().toString());
+		mMotion.Motors[0].angle_stop = Byte.parseByte( mEtMotor1Stop.getText().toString());
+		mMotion.Motors[0].delay_time = Byte.parseByte( mEtMotor1Delay.getText().toString());
+		mMotion.Motors[0].hold_time = Byte.parseByte( mEtMotor1Hold.getText().toString());
+		mMotion.Motors[0].repeat_count = Byte.parseByte( mEtMotor1Repeat.getText().toString());
+
+		mMotion.Motors[1].angle_init = Byte.parseByte( mEtMotor2Init.getText().toString());
+		mMotion.Motors[1].angle_start = Byte.parseByte(mEtMotor2Start.getText().toString());
+		mMotion.Motors[1].angle_stop = Byte.parseByte( mEtMotor2Stop.getText().toString());
+		mMotion.Motors[1].delay_time = Byte.parseByte( mEtMotor2Delay.getText().toString());
+		mMotion.Motors[1].hold_time = Byte.parseByte( mEtMotor2Hold.getText().toString());
+		mMotion.Motors[1].repeat_count = Byte.parseByte( mEtMotor2Repeat.getText().toString());
+
+		mMotion.Motors[2].angle_init = Byte.parseByte( mEtMotor3Init.getText().toString());
+		mMotion.Motors[2].angle_start = Byte.parseByte(mEtMotor3Start.getText().toString());
+		mMotion.Motors[2].angle_stop = Byte.parseByte( mEtMotor3Stop.getText().toString());
+		mMotion.Motors[2].delay_time = Byte.parseByte( mEtMotor3Delay.getText().toString());
+		mMotion.Motors[2].hold_time = Byte.parseByte( mEtMotor3Hold.getText().toString());
+		mMotion.Motors[2].repeat_count = Byte.parseByte( mEtMotor3Repeat.getText().toString());
+
+		mMotion.Motors[3].angle_init = Byte.parseByte( mEtMotor4Init.getText().toString());
+		mMotion.Motors[3].angle_start = Byte.parseByte(mEtMotor4Start.getText().toString());
+		mMotion.Motors[3].angle_stop = Byte.parseByte( mEtMotor4Stop.getText().toString());
+		mMotion.Motors[3].delay_time = Byte.parseByte( mEtMotor4Delay.getText().toString());
+		mMotion.Motors[3].hold_time = Byte.parseByte( mEtMotor4Hold.getText().toString());
+		mMotion.Motors[3].repeat_count = Byte.parseByte( mEtMotor4Repeat.getText().toString());
+
+		mMotion.Sound.type = (byte) mSpSoundType.getSelectedItemPosition();
+		mMotion.Sound.delay_time = Byte.parseByte( mEtSoundDelay.getText().toString());
 		
-//		mEtMotor1Start.setText(String.valueOf(mMotion.Motors[0].angle_start));
-//		mEtMotor1Stop.setText(String.valueOf(mMotion.Motors[0].angle_stop));
-//		mEtMotor1Delay.setText(String.valueOf(mMotion.Motors[0].delay_time));
-//		mEtMotor1Hold.setText(String.valueOf(mMotion.Motors[0].hold_time));
-//		mEtMotor1Repeat.setText(String.valueOf(mMotion.Motors[0].repeat_count));
-//
-//		mEtMotor2Init.setText(String.valueOf(mMotion.Motors[1].angle_init));
-//		mEtMotor2Start.setText(String.valueOf(mMotion.Motors[1].angle_start));
-//		mEtMotor2Stop.setText(String.valueOf(mMotion.Motors[1].angle_stop));
-//		mEtMotor2Delay.setText(String.valueOf(mMotion.Motors[1].delay_time));
-//		mEtMotor2Hold.setText(String.valueOf(mMotion.Motors[1].hold_time));
-//		mEtMotor2Repeat.setText(String.valueOf(mMotion.Motors[1].repeat_count));
-//
-//		mEtMotor3Init.setText(String.valueOf(mMotion.Motors[2].angle_init));
-//		mEtMotor3Start.setText(String.valueOf(mMotion.Motors[2].angle_start));
-//		mEtMotor3Stop.setText(String.valueOf(mMotion.Motors[2].angle_stop));
-//		mEtMotor3Delay.setText(String.valueOf(mMotion.Motors[2].delay_time));
-//		mEtMotor3Hold.setText(String.valueOf(mMotion.Motors[2].hold_time));
-//		mEtMotor3Repeat.setText(String.valueOf(mMotion.Motors[2].repeat_count));
-//
-//		mEtMotor4Init.setText(String.valueOf(mMotion.Motors[3].angle_init));
-//		mEtMotor4Start.setText(String.valueOf(mMotion.Motors[3].angle_start));
-//		mEtMotor4Stop.setText(String.valueOf(mMotion.Motors[3].angle_stop));
-//		mEtMotor4Delay.setText(String.valueOf(mMotion.Motors[3].delay_time));
-//		mEtMotor4Hold.setText(String.valueOf(mMotion.Motors[3].hold_time));
-//		mEtMotor4Repeat.setText(String.valueOf(mMotion.Motors[3].repeat_count));
-//
-//		mSpSoundType.setSelection(mMotion.Sound.type);
-//		mEtSoundDelay.setText(String.valueOf(mMotion.Sound.delay_time));
-//		
-//		mEtLedBlink.setText(String.valueOf(mMotion.Led.blink));
-//		mEtLedDelay.setText(String.valueOf(mMotion.Led.delay_time));	
+		mMotion.Led.blink =  Byte.parseByte( mEtLedBlink.getText().toString());
+		mMotion.Led.delay_time = Byte.parseByte( mEtLedDelay.getText().toString());	
 	}
 }

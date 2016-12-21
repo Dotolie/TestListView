@@ -93,6 +93,7 @@ public class TestListViewActivity extends Activity {
 				Motion motion = new Motion(
 						mCount,
 						mCount + " 번째" + " ListView 입니다.", 
+						R.drawable.action,
 						sensor,
 						motors,
 						sound,

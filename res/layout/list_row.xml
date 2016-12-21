@@ -11,8 +11,8 @@
 
         <Button
             android:id="@+id/btn_config"
-            android:layout_width="50dp"
-            android:layout_height="50dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="10dp"
@@ -21,8 +21,8 @@
 
         <Button
             android:id="@+id/btn_run"
-            android:layout_width="60dp"
-            android:layout_height="50dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/iv_image"
             android:focusable="false"
@@ -48,7 +48,7 @@
 
         <TextView
             android:id="@+id/tv_no"
-            android:layout_width="20dp"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
