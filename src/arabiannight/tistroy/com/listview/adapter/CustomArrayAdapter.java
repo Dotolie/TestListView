@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import arabiannight.tistroy.com.listview.R;
+import arabiannight.tistroy.com.listview.activity.TestListViewActivity;
 import arabiannight.tistroy.com.listview.data.Motion;
 
 public class CustomArrayAdapter extends ArrayAdapter<Motion>{
@@ -106,8 +107,12 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 	}
 	
 	private View.OnClickListener buttonClickListener = new View.OnClickListener() {
+		
 		@Override
 		public void onClick(View v) {
+			TestListViewActivity main = (TestListViewActivity)mContext;
+			int position = 0;
+
 			switch (v.getId()) {
 			
 			// 이미지 클릭
@@ -121,19 +126,13 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 			
 			// 버튼 클릭
 			case R.id.btn_config:
-				Toast.makeText(
-						mContext, 
-						"버튼 Tag = " + v.getTag(),
-						Toast.LENGTH_SHORT
-						).show();
+				position = Integer.parseInt( v.getTag().toString() );
+				main.editMotion(position);
 				break;
 
 			case R.id.btn_run:
-				Toast.makeText(
-						mContext, 
-						"run 버튼 Tag = " + v.getTag(),
-						Toast.LENGTH_SHORT
-						).show();
+				position = Integer.parseInt( v.getTag().toString() );
+				main.sendConfig(position);
 				break;
 
 				// CheckBox

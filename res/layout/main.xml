@@ -42,12 +42,12 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <Button
-                android:id="@+id/btn_edit"
+                android:id="@+id/btn_save"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/btn_add"
-                android:text="Edit" />
+                android:text="Save" />
 
             <Button
                 android:id="@+id/btn_deletes"
