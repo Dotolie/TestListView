@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import arabiannight.tistroy.com.listview.R;
 import arabiannight.tistroy.com.listview.data.Motion;
 
@@ -15,8 +16,10 @@ public class ConfigActivity extends Activity {
 	private final String TAG = "Config";
 	
 	private Motion mMotion = null;
-		private ImageView mIV = null;
-
+	
+	private ImageView mIvIcon = null;
+	private TextView mTvTitle = null;
+	
 	private Button mBtnCancel = null;
 	private Button mBtnOk = null;
 	
@@ -89,7 +92,8 @@ public class ConfigActivity extends Activity {
      * @param message 메시지
      */
 	private void setupViews() {
-		mIV = (ImageView)findViewById(R.id.imageView1);
+		mIvIcon = (ImageView)findViewById(R.id.iv_icon);
+		mTvTitle = (TextView)findViewById(R.id.tv_title_1);
 		 
 		mSpSensorType = (Spinner)findViewById(R.id.sp_sensor_type);
 		mEtSensorValue = (EditText)findViewById(R.id.et_sensor_value);
@@ -161,22 +165,22 @@ public class ConfigActivity extends Activity {
 		try {
 			switch( mMotion.no) {
 			case 0:
-				mIV.setImageResource(R.drawable.connect);
+				mIvIcon.setImageResource(R.drawable.connect);
 				break;
 			case 1:
-				mIV.setImageResource(R.drawable.disconnect);
+				mIvIcon.setImageResource(R.drawable.disconnect);
 				break;
 			case 2:
-				mIV.setImageResource(R.drawable.battery_low);
+				mIvIcon.setImageResource(R.drawable.battery_low);
 				break;
 			case 3:
-				mIV.setImageResource(R.drawable.vibration);
+				mIvIcon.setImageResource(R.drawable.vibration);
 				break;
 			default:
-				mIV.setImageResource(R.drawable.action);
+				mIvIcon.setImageResource(R.drawable.action);
 				break;
 			}
-			
+			mTvTitle.setText(mMotion.title);
 			
 			mSpSensorType.setSelection(mMotion.Sensor.type);
 			mEtSensorValue.setText(String.valueOf(mMotion.Sensor.value));
