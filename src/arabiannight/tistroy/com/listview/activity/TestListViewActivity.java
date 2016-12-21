@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -13,13 +14,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 import arabiannight.tistroy.com.listview.R;
 import arabiannight.tistroy.com.listview.adapter.CustomArrayAdapter;
-import arabiannight.tistroy.com.listview.data.InfoClass;
+import arabiannight.tistroy.com.listview.data.Led;
+import arabiannight.tistroy.com.listview.data.Motion;
+import arabiannight.tistroy.com.listview.data.Motor;
+import arabiannight.tistroy.com.listview.data.Sensor;
+import arabiannight.tistroy.com.listview.data.Sound;
 
 public class TestListViewActivity extends Activity {
 	private final String TAG = "ActionTester";
 	
+	private static final int RequestCode2Config = 1;
 	private CustomArrayAdapter mCustomArrayAdaptor = null;
-	private ArrayList<InfoClass> mActionList = null;
+	private ArrayList<Motion> mActionList = null;
 	private Button mBtnAdd = null;
 	private Button mBtnDeletes = null;
 	private Button mBtnEdit = null;
@@ -35,7 +41,7 @@ public class TestListViewActivity extends Activity {
         setLayout();
         setViews();
         
-        mActionList = new ArrayList<InfoClass>();
+        mActionList = new ArrayList<Motion>();
         
         // BaseAdapter 연결
 //        mListView.setAdapter(new CustomBaseAdapter(this, mCareList));
@@ -48,14 +54,12 @@ public class TestListViewActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
 				
-				Bundle extras = new Bundle();
-				extras.putString("title", mActionList.get(position).title);
-				extras.putString("no" , mActionList.get(position).no );
+				Motion motionObject = mActionList.get(position);
 				
 				Intent intent = new Intent(getApplicationContext(), ConfigActivity.class);
-				intent.putExtras(extras);
+				intent.putExtra("MotionObject", motionObject);
 				
-				startActivity(intent);
+				startActivityForResult(intent, RequestCode2Config);
 				
 				Toast.makeText(
 						getApplicationContext(), 
@@ -73,11 +77,26 @@ public class TestListViewActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				mActionList.add(new InfoClass (
+				Sensor sensor = new Sensor(3,10);
+				Motor[] motors = { 
+						new Motor(1,0,9,100,50,5),
+						new Motor(2,0,9,100,50,5),
+						new Motor(3,0,9,100,50,5),
+						new Motor(4,0,9,100,50,5)
+						};
+				Sound sound = new Sound(3, 100);
+				Led led = new Led(5, 20);
+
+				Motion motion = new Motion(
+						mCount,
 						mCount + " 번째" + " ListView 입니다.", 
-						getResources().getDrawable(R.drawable.action), 
-						""+ mCount
-						));	
+						sensor,
+						motors,
+						sound,
+						led
+						);
+				
+				mActionList.add( motion );
 				mCount++;
 				runOnUiThread(new Runnable() {
 					@Override
@@ -120,7 +139,28 @@ public class TestListViewActivity extends Activity {
     	mTvActionItems = (TextView)findViewById(R.id.tv_actionItems);
     }
     
-    private ListView mListView = null;
+    
+    @Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+		switch( requestCode ) {
+		case RequestCode2Config:
+			if( resultCode == RESULT_OK) {
+				Motion motion = (Motion)getIntent().getSerializableExtra("MotionObject");
+				Log.d(TAG, "received intent OK");
+			}
+			else {
+				Log.d(TAG,  "received intent CANCEL");
+			}
+			break;
+		default:
+			break;
+		}
+	}
+
+
+	private ListView mListView = null;
     
     private void setLayout(){
     	mListView = (ListView) findViewById(R.id.lv_list);

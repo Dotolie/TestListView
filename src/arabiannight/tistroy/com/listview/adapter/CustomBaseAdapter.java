@@ -13,16 +13,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import arabiannight.tistroy.com.listview.R;
-import arabiannight.tistroy.com.listview.data.InfoClass;
+import arabiannight.tistroy.com.listview.data.Motion;
 
 public class CustomBaseAdapter extends BaseAdapter{
 	
 	private LayoutInflater inflater = null;
-	private ArrayList<InfoClass> infoList = null;
+	private ArrayList<Motion> infoList = null;
 	private ViewHolder viewHolder = null;
 	private Context mContext = null;
 	
-	public CustomBaseAdapter(Context c , ArrayList<InfoClass> arrays){
+	public CustomBaseAdapter(Context c , ArrayList<Motion> arrays){
 		this.mContext = c;
 		this.inflater = LayoutInflater.from(c);
 		this.infoList = arrays;
@@ -36,7 +36,7 @@ public class CustomBaseAdapter extends BaseAdapter{
 
 	// Adapter가 관리하는 Data의 Item 의 Position을 <객체> 형태로 얻어 옵니다.
 	@Override
-	public InfoClass getItem(int position) {
+	public Motion getItem(int position) {
 		return infoList.get(position);
 	}
 
@@ -55,7 +55,7 @@ public class CustomBaseAdapter extends BaseAdapter{
 		if(v == null){
 			viewHolder = new ViewHolder();
 			v = inflater.inflate(R.layout.list_row, null);
-			viewHolder.tv_no = (TextView)v.findViewById(R.id.tv_no);
+//			viewHolder.tv_no = (TextView)v.findViewById(R.id.tv_no);
 			viewHolder.tv_title = (TextView)v.findViewById(R.id.tv_title);
 			viewHolder.iv_image = (ImageView)v.findViewById(R.id.iv_image);
 			viewHolder.btn_config = (Button)v.findViewById(R.id.btn_config);
@@ -68,7 +68,7 @@ public class CustomBaseAdapter extends BaseAdapter{
 			viewHolder = (ViewHolder)v.getTag();
 		}
 		
-		viewHolder.tv_no.setText(getItem(position).no);
+//		viewHolder.tv_no.setText(getItem(position).no);
 		viewHolder.tv_title.setText(getItem(position).title);
 		
 		// image 나 button 등에 Tag를 사용해서 position 을 부여해 준다. 
@@ -84,7 +84,7 @@ public class CustomBaseAdapter extends BaseAdapter{
 		viewHolder.cb_box.setTag(position);
 		viewHolder.cb_box.setOnClickListener(buttonClickListener);
 		
-		viewHolder.iv_image.setImageDrawable(getItem(position).image);
+//		viewHolder.iv_image.setImageDrawable(getItem(position).image);
 
 		return v;
 	}
@@ -92,11 +92,11 @@ public class CustomBaseAdapter extends BaseAdapter{
 	// Adapter가 관리하는 Data List를 교체 한다. 
 	// 교체 후 Adapter.notifyDataSetChanged() 메서드로 변경 사실을
 	// Adapter에 알려 주어 ListView에 적용 되도록 한다.
-	public void setArrayList(ArrayList<InfoClass> arrays){
+	public void setArrayList(ArrayList<Motion> arrays){
 		this.infoList = arrays;
 	}
 	
-	public ArrayList<InfoClass> getArrayList(){
+	public ArrayList<Motion> getArrayList(){
 		return infoList;
 	}
 	
@@ -145,7 +145,7 @@ public class CustomBaseAdapter extends BaseAdapter{
 	 */
 	class ViewHolder{
 		public TextView tv_title = null;
-		public TextView tv_no = null;
+//		public TextView tv_no = null;
 		public ImageView iv_image = null;
 		public Button btn_run = null;
 		public Button btn_config = null;

@@ -1,14 +1,62 @@
 package arabiannight.tistroy.com.listview.activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Spinner;
 import arabiannight.tistroy.com.listview.R;
+import arabiannight.tistroy.com.listview.data.Motion;
 
 public class ConfigActivity extends Activity {
+	private final String TAG = "Config";
+	
+	private Motion mMotion = null;
+	private ImageView mIV = null;
 
+	private Button mBtnCancel = null;
+	private Button mBtnOk = null;
+	
+	private Spinner mSpSensorType = null;
+	private EditText mEtSensorValue = null;
+	
+	private EditText mEtMotor1Init = null;
+	private EditText mEtMotor1Start = null;
+	private EditText mEtMotor1Stop = null;
+	private EditText mEtMotor1Delay = null;
+	private EditText mEtMotor1Hold = null;
+	private EditText mEtMotor1Repeat = null;
+
+	private EditText mEtMotor2Init = null;
+	private EditText mEtMotor2Start = null;
+	private EditText mEtMotor2Stop = null;
+	private EditText mEtMotor2Delay = null;
+	private EditText mEtMotor2Hold = null;
+	private EditText mEtMotor2Repeat = null;
+
+	private EditText mEtMotor3Init = null;
+	private EditText mEtMotor3Start = null;
+	private EditText mEtMotor3Stop = null;
+	private EditText mEtMotor3Delay = null;
+	private EditText mEtMotor3Hold = null;
+	private EditText mEtMotor3Repeat = null;
+
+	private EditText mEtMotor4Init = null;
+	private EditText mEtMotor4Start = null;
+	private EditText mEtMotor4Stop = null;
+	private EditText mEtMotor4Delay = null;
+	private EditText mEtMotor4Hold = null;
+	private EditText mEtMotor4Repeat = null;
+
+	private Spinner mSpSoundType = null;
+	private EditText mEtSoundDelay = null;
+	
+	private EditText mEtLedBlink = null;
+	private EditText mEtLedDelay = null;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -17,10 +65,13 @@ public class ConfigActivity extends Activity {
 		setContentView(R.layout.config);
 
         // 이전 액티비티로부터 넘어온 데이터를 꺼낸다.
-        String title = getIntent().getStringExtra("title");
-        String no = getIntent().getStringExtra("no");
+		mMotion = (Motion)getIntent().getSerializableExtra("MotionObject");
+		
+		setupViews();
+		setValues();
+		setupButtons();
        
-         
+        
         // 백그라운드 레이아웃(액티비티의 루트 레이아웃)을 레퍼런스 한다.
 //        LinearLayout llBackground = (LinearLayout)findViewById(R.id.main_back);
          
@@ -37,32 +88,137 @@ public class ConfigActivity extends Activity {
      * @param title 타이틀
      * @param message 메시지
      */
-    private void alert(String title, String message)
-    {
-        // 체인형으로 메소드를 사용한다.
-        new AlertDialog.Builder(this)
-            // 색상을 타이틀에 세팅한다.
-            .setTitle(title)
-            // 설명을 메시지 부분에 세팅한다.
-            .setMessage(message)
-            // 취소를 못하도록 막는다.
-            .setCancelable(false)
-            // 확인 버튼을 만든다.
-            .setPositiveButton("확인", new DialogInterface.OnClickListener()
-            {
-                /* (non-Javadoc)
-                 * @see android.content.DialogInterface.OnClickListener#onClick(android.content.DialogInterface, int)
-                 */
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    // 확인버튼이 클릭되면 다이얼로그를 종료한다.
-                    dialog.dismiss();
- 
-                    // 액티비티를 종료한다.
-                    finish();
-                }
-            })
-            .show();
-    }
+	private void setupViews() {
+		mIV = (ImageView)findViewById(R.id.imageView1);
+		 
+		mSpSensorType = (Spinner)findViewById(R.id.sp_sensor_type);
+		mEtSensorValue = (EditText)findViewById(R.id.et_sensor_value);
+		
+		mEtMotor1Init = (EditText)findViewById(R.id.et_motor1_init);
+		mEtMotor1Start = (EditText)findViewById(R.id.et_motor1_start);
+		mEtMotor1Stop = (EditText)findViewById(R.id.et_motor1_stop);
+		mEtMotor1Delay = (EditText)findViewById(R.id.et_motor1_delay);
+		mEtMotor1Hold = (EditText)findViewById(R.id.et_motor1_hold);
+		mEtMotor1Repeat = (EditText)findViewById(R.id.et_motor1_repeat);
 
+		mEtMotor2Init = (EditText)findViewById(R.id.et_motor2_init);
+		mEtMotor2Start = (EditText)findViewById(R.id.et_motor2_start);
+		mEtMotor2Stop = (EditText)findViewById(R.id.et_motor2_stop);
+		mEtMotor2Delay = (EditText)findViewById(R.id.et_motor2_delay);
+		mEtMotor2Hold = (EditText)findViewById(R.id.et_motor2_hold);
+		mEtMotor2Repeat = (EditText)findViewById(R.id.et_motor2_repeat);
+
+		mEtMotor3Init = (EditText)findViewById(R.id.et_motor3_init);
+		mEtMotor3Start = (EditText)findViewById(R.id.et_motor3_start);
+		mEtMotor3Stop = (EditText)findViewById(R.id.et_motor3_stop);
+		mEtMotor3Delay = (EditText)findViewById(R.id.et_motor3_delay);
+		mEtMotor3Hold = (EditText)findViewById(R.id.et_motor3_hold);
+		mEtMotor3Repeat = (EditText)findViewById(R.id.et_motor3_repeat);
+
+		mEtMotor4Init = (EditText)findViewById(R.id.et_motor4_init);
+		mEtMotor4Start = (EditText)findViewById(R.id.et_motor4_start);
+		mEtMotor4Stop = (EditText)findViewById(R.id.et_motor4_stop);
+		mEtMotor4Delay = (EditText)findViewById(R.id.et_motor4_delay);
+		mEtMotor4Hold = (EditText)findViewById(R.id.et_motor4_hold);
+		mEtMotor4Repeat = (EditText)findViewById(R.id.et_motor4_repeat);
+		
+		mSpSoundType = (Spinner)findViewById(R.id.sp_sound_type);
+		mEtSoundDelay = (EditText)findViewById(R.id.et_sound_delay);
+		
+		mEtLedBlink = (EditText)findViewById(R.id.et_led_blink);
+		mEtLedDelay = (EditText)findViewById(R.id.et_led_delay);
+	}
+	
+	private void setupButtons() {
+		mBtnOk = (Button)findViewById(R.id.btnOk);
+        mBtnOk.setOnClickListener(new View.OnClickListener() {	
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Motion motion = new Motion();
+				Intent intent = new Intent();
+				intent.putExtra("MotionObject", motion);
+
+				setResult(RESULT_OK, intent);
+				finish();
+			}
+		});
+
+		mBtnCancel = (Button)findViewById(R.id.btnCancel);
+        mBtnCancel.setOnClickListener(new View.OnClickListener() {	
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				setResult(RESULT_CANCELED);
+				finish();
+			}
+		});
+		
+	}
+	
+	private void setValues() {
+		
+		try {
+			switch( mMotion.no) {
+			case 0:
+				mIV.setImageResource(R.drawable.connect);
+				break;
+			case 1:
+				mIV.setImageResource(R.drawable.disconnect);
+				break;
+			case 2:
+				mIV.setImageResource(R.drawable.battery_low);
+				break;
+			case 3:
+				mIV.setImageResource(R.drawable.vibration);
+				break;
+			default:
+				mIV.setImageResource(R.drawable.action);
+				break;
+			}
+			
+			
+			mSpSensorType.setSelection(mMotion.Sensor.type);
+			mEtSensorValue.setText(String.valueOf(mMotion.Sensor.value));
+			
+
+			mEtMotor1Init.setText(String.valueOf(mMotion.Motors[0].angle_init));
+			mEtMotor1Start.setText(String.valueOf(mMotion.Motors[0].angle_start));
+			mEtMotor1Stop.setText(String.valueOf(mMotion.Motors[0].angle_stop));
+			mEtMotor1Delay.setText(String.valueOf(mMotion.Motors[0].delay_time));
+			mEtMotor1Hold.setText(String.valueOf(mMotion.Motors[0].hold_time));
+			mEtMotor1Repeat.setText(String.valueOf(mMotion.Motors[0].repeat_count));
+	
+			mEtMotor2Init.setText(String.valueOf(mMotion.Motors[1].angle_init));
+			mEtMotor2Start.setText(String.valueOf(mMotion.Motors[1].angle_start));
+			mEtMotor2Stop.setText(String.valueOf(mMotion.Motors[1].angle_stop));
+			mEtMotor2Delay.setText(String.valueOf(mMotion.Motors[1].delay_time));
+			mEtMotor2Hold.setText(String.valueOf(mMotion.Motors[1].hold_time));
+			mEtMotor2Repeat.setText(String.valueOf(mMotion.Motors[1].repeat_count));
+	
+			mEtMotor3Init.setText(String.valueOf(mMotion.Motors[2].angle_init));
+			mEtMotor3Start.setText(String.valueOf(mMotion.Motors[2].angle_start));
+			mEtMotor3Stop.setText(String.valueOf(mMotion.Motors[2].angle_stop));
+			mEtMotor3Delay.setText(String.valueOf(mMotion.Motors[2].delay_time));
+			mEtMotor3Hold.setText(String.valueOf(mMotion.Motors[2].hold_time));
+			mEtMotor3Repeat.setText(String.valueOf(mMotion.Motors[2].repeat_count));
+	
+			mEtMotor4Init.setText(String.valueOf(mMotion.Motors[3].angle_init));
+			mEtMotor4Start.setText(String.valueOf(mMotion.Motors[3].angle_start));
+			mEtMotor4Stop.setText(String.valueOf(mMotion.Motors[3].angle_stop));
+			mEtMotor4Delay.setText(String.valueOf(mMotion.Motors[3].delay_time));
+			mEtMotor4Hold.setText(String.valueOf(mMotion.Motors[3].hold_time));
+			mEtMotor4Repeat.setText(String.valueOf(mMotion.Motors[3].repeat_count));
+	
+			mSpSoundType.setSelection(mMotion.Sound.type);
+			mEtSoundDelay.setText(String.valueOf(mMotion.Sound.delay_time));
+			
+			mEtLedBlink.setText(String.valueOf(mMotion.Led.blink));
+			mEtLedDelay.setText(String.valueOf(mMotion.Led.delay_time));		
+			
+		}
+		catch( Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

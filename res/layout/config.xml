@@ -25,9 +25,10 @@
             android:text="Type    " />
 
         <Spinner
-            android:id="@+id/Spinner01"
+            android:id="@+id/sp_sensor_type"
             android:layout_width="150dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            android:entries="@array/sensors" />
 
         <TextView
             android:id="@+id/TextView02"
@@ -36,13 +37,20 @@
             android:text="value" />
 
         <EditText
-            android:id="@+id/EditText01"
+            android:id="@+id/et_sensor_value"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
             android:text="50" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher" />
+
     </TableRow>
 
     <TableRow
@@ -66,13 +74,13 @@
             android:text="Init\nAngle" />
 
         <EditText
-            android:id="@+id/EditText04"
+            android:id="@+id/et_motor1_init"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
 
         <TextView
             android:id="@+id/textView2"
@@ -81,13 +89,13 @@
             android:text="Start\nAngle" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/et_motor1_start"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="1" />
 
         <TextView
             android:id="@+id/TextView03"
@@ -96,7 +104,7 @@
             android:text="Stop\nAngle" />
 
         <EditText
-            android:id="@+id/EditText03"
+            android:id="@+id/et_motor1_stop"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -111,13 +119,13 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText05"
+            android:id="@+id/et_motor1_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="12" />
+            android:text="50" />
 
         <TextView
             android:id="@+id/TextView08"
@@ -126,7 +134,7 @@
             android:text="Hold\nTime" />
 
         <EditText
-            android:id="@+id/EditText06"
+            android:id="@+id/et_motor1_hold"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -141,13 +149,13 @@
             android:text="Repeat\nCount" />
 
         <EditText
-            android:id="@+id/EditText07"
+            android:id="@+id/et_motor1_repeat"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
 
     </TableRow>
 
@@ -162,7 +170,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="MOTOR1 : "
+            android:text="MOTOR2 : "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -172,13 +180,13 @@
             android:text="Init\nAngle" />
 
         <EditText
-            android:id="@+id/EditText09"
+            android:id="@+id/et_motor2_init"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
 
         <TextView
             android:id="@+id/TextView12"
@@ -187,13 +195,13 @@
             android:text="Start\nAngle" />
 
         <EditText
-            android:id="@+id/EditText12"
+            android:id="@+id/et_motor2_start"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="1" />
 
         <TextView
             android:id="@+id/TextView14"
@@ -202,7 +210,7 @@
             android:text="Stop\nAngle" />
 
         <EditText
-            android:id="@+id/EditText11"
+            android:id="@+id/et_motor2_stop"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -217,13 +225,13 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText10"
+            android:id="@+id/et_motor2_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="12" />
+            android:text="50" />
 
         <TextView
             android:id="@+id/TextView04"
@@ -232,7 +240,7 @@
             android:text="Hold\nTime" />
 
         <EditText
-            android:id="@+id/EditText02"
+            android:id="@+id/et_motor2_hold"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -247,13 +255,13 @@
             android:text="Repeat\nCount" />
 
         <EditText
-            android:id="@+id/EditText08"
+            android:id="@+id/et_motor2_repeat"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
     </TableRow>
 
     <TableRow
@@ -267,7 +275,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="MOTOR1 : "
+            android:text="MOTOR3 : "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -277,13 +285,13 @@
             android:text="Init\nAngle" />
 
         <EditText
-            android:id="@+id/EditText15"
+            android:id="@+id/et_motor3_init"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
 
         <TextView
             android:id="@+id/TextView19"
@@ -292,13 +300,13 @@
             android:text="Start\nAngle" />
 
         <EditText
-            android:id="@+id/EditText18"
+            android:id="@+id/et_motor3_start"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="1" />
 
         <TextView
             android:id="@+id/TextView21"
@@ -307,7 +315,7 @@
             android:text="Stop\nAngle" />
 
         <EditText
-            android:id="@+id/EditText17"
+            android:id="@+id/et_motor3_stop"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -322,13 +330,13 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText16"
+            android:id="@+id/et_motor3_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="12" />
+            android:text="50" />
 
         <TextView
             android:id="@+id/TextView15"
@@ -337,7 +345,7 @@
             android:text="Hold\nTime" />
 
         <EditText
-            android:id="@+id/EditText13"
+            android:id="@+id/et_motor3_hold"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -352,13 +360,13 @@
             android:text="Repeat\nCount" />
 
         <EditText
-            android:id="@+id/EditText14"
+            android:id="@+id/et_motor3_repeat"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
     </TableRow>
 
     <TableRow
@@ -372,7 +380,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="MOTOR1 : "
+            android:text="MOTOR4 : "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -382,13 +390,12 @@
             android:text="Init\nAngle" />
 
         <EditText
-            android:id="@+id/EditText21"
+            android:id="@+id/et_motor4_init"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
 
         <TextView
             android:id="@+id/TextView26"
@@ -397,13 +404,13 @@
             android:text="Start\nAngle" />
 
         <EditText
-            android:id="@+id/EditText24"
+            android:id="@+id/et_motor4_start"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="1" />
 
         <TextView
             android:id="@+id/TextView28"
@@ -412,7 +419,7 @@
             android:text="Stop\nAngle" />
 
         <EditText
-            android:id="@+id/EditText23"
+            android:id="@+id/et_motor4_stop"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -427,13 +434,13 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText22"
+            android:id="@+id/et_motor4_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="12" />
+            android:text="50" />
 
         <TextView
             android:id="@+id/TextView22"
@@ -442,7 +449,7 @@
             android:text="Hold\nTime" />
 
         <EditText
-            android:id="@+id/EditText19"
+            android:id="@+id/et_motor4_hold"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -457,13 +464,13 @@
             android:text="Repeat\nCount" />
 
         <EditText
-            android:id="@+id/EditText20"
+            android:id="@+id/et_motor4_repeat"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="5" />
     </TableRow>
 
     <TableRow
@@ -477,7 +484,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="SOUND1  : "
+            android:text="SOUND     : "
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
@@ -486,14 +493,11 @@
             android:layout_height="wrap_content"
             android:text="Type " />
 
-        <EditText
-            android:id="@+id/EditText27"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:gravity="center_vertical|right"
-            android:inputType="number"
-            android:text="50" />
+        <Spinner
+            android:id="@+id/sp_sound_type"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:entries="@array/sounds" />
 
         <TextView
             android:id="@+id/TextView33"
@@ -502,7 +506,7 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText30"
+            android:id="@+id/et_sound_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -532,13 +536,12 @@
             android:text="Blink " />
 
         <EditText
-            android:id="@+id/EditText33"
+            android:id="@+id/et_led_blink"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:gravity="center_vertical|right"
             android:inputType="number"
-            android:text="50" />
+            android:text="0" />
 
         <TextView
             android:id="@+id/TextView40"
@@ -547,7 +550,7 @@
             android:text="Delay\nTime" />
 
         <EditText
-            android:id="@+id/EditText36"
+            android:id="@+id/et_led_delay"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -562,18 +565,18 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btnOk"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="OK" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="Cancel" />
 
     </TableRow>
 

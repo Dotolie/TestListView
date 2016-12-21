@@ -13,16 +13,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import arabiannight.tistroy.com.listview.R;
-import arabiannight.tistroy.com.listview.data.InfoClass;
+import arabiannight.tistroy.com.listview.data.Motion;
 
-public class CustomArrayAdapter extends ArrayAdapter<InfoClass>{
+public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 
 	private ViewHolder viewHolder = null;
 	private LayoutInflater inflater = null;
-	private ArrayList<InfoClass> infoList = null;
+	private ArrayList<Motion> infoList = null;
 	private Context mContext = null;
 
-	public CustomArrayAdapter(Context c, int textViewResourceId, ArrayList<InfoClass> arrays) {
+	public CustomArrayAdapter(Context c, int textViewResourceId, ArrayList<Motion> arrays) {
 		super(c, textViewResourceId, arrays);
 		this.inflater = LayoutInflater.from(c);
 		this.mContext = c;
@@ -34,7 +34,7 @@ public class CustomArrayAdapter extends ArrayAdapter<InfoClass>{
 	}
 
 	@Override
-	public InfoClass getItem(int position) {
+	public Motion getItem(int position) {
 		return super.getItem(position);
 	}
 
@@ -65,7 +65,7 @@ public class CustomArrayAdapter extends ArrayAdapter<InfoClass>{
 			viewHolder = (ViewHolder)v.getTag();
 		}
 		
-		viewHolder.tv_no.setText(getItem(position).no);
+//		viewHolder.tv_no.setText(getItem(position).no);
 		viewHolder.tv_no.setTag(position);
 		
 		viewHolder.btn_run.setOnClickListener(buttonClickListener);
@@ -91,17 +91,17 @@ public class CustomArrayAdapter extends ArrayAdapter<InfoClass>{
 			viewHolder.iv_image.setImageResource(R.drawable.battery_low);
 		else if( position == 3 )
 			viewHolder.iv_image.setImageResource(R.drawable.vibration);
-		else 
-			viewHolder.iv_image.setImageDrawable(getItem(position).image);
+//		else 
+//			viewHolder.iv_image.setImageDrawable(getItem(position).image);
 
 		return v;
 	}
 	
-	public void setArrayList(ArrayList<InfoClass> arrays){
+	public void setArrayList(ArrayList<Motion> arrays){
 		this.infoList  = arrays;
 	}
 	
-	public ArrayList<InfoClass> getArrayList(){
+	public ArrayList<Motion> getArrayList(){
 		return infoList;
 	}
 	
