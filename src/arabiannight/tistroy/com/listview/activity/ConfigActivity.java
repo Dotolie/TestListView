@@ -15,7 +15,7 @@ public class ConfigActivity extends Activity {
 	private final String TAG = "Config";
 	
 	private Motion mMotion = null;
-	private ImageView mIV = null;
+		private ImageView mIV = null;
 
 	private Button mBtnCancel = null;
 	private Button mBtnOk = null;
@@ -135,9 +135,9 @@ public class ConfigActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Motion motion = new Motion();
+				getValues();
 				Intent intent = new Intent();
-				intent.putExtra("MotionObject", motion);
+				intent.putExtra("MotionObject", mMotion);
 
 				setResult(RESULT_OK, intent);
 				finish();
@@ -220,5 +220,46 @@ public class ConfigActivity extends Activity {
 		catch( Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void getValues() {
+		mMotion.Sensor.type = (byte) mSpSensorType.getSelectedItemPosition(); 
+		mMotion.Sensor.value = Byte.parseByte(mEtSensorValue.getText().toString());
+		
+
+		mMotion.Motors[0].angle_init = Byte.parseByte( mEtMotor1Init.getText().toString());
+		
+//		mEtMotor1Start.setText(String.valueOf(mMotion.Motors[0].angle_start));
+//		mEtMotor1Stop.setText(String.valueOf(mMotion.Motors[0].angle_stop));
+//		mEtMotor1Delay.setText(String.valueOf(mMotion.Motors[0].delay_time));
+//		mEtMotor1Hold.setText(String.valueOf(mMotion.Motors[0].hold_time));
+//		mEtMotor1Repeat.setText(String.valueOf(mMotion.Motors[0].repeat_count));
+//
+//		mEtMotor2Init.setText(String.valueOf(mMotion.Motors[1].angle_init));
+//		mEtMotor2Start.setText(String.valueOf(mMotion.Motors[1].angle_start));
+//		mEtMotor2Stop.setText(String.valueOf(mMotion.Motors[1].angle_stop));
+//		mEtMotor2Delay.setText(String.valueOf(mMotion.Motors[1].delay_time));
+//		mEtMotor2Hold.setText(String.valueOf(mMotion.Motors[1].hold_time));
+//		mEtMotor2Repeat.setText(String.valueOf(mMotion.Motors[1].repeat_count));
+//
+//		mEtMotor3Init.setText(String.valueOf(mMotion.Motors[2].angle_init));
+//		mEtMotor3Start.setText(String.valueOf(mMotion.Motors[2].angle_start));
+//		mEtMotor3Stop.setText(String.valueOf(mMotion.Motors[2].angle_stop));
+//		mEtMotor3Delay.setText(String.valueOf(mMotion.Motors[2].delay_time));
+//		mEtMotor3Hold.setText(String.valueOf(mMotion.Motors[2].hold_time));
+//		mEtMotor3Repeat.setText(String.valueOf(mMotion.Motors[2].repeat_count));
+//
+//		mEtMotor4Init.setText(String.valueOf(mMotion.Motors[3].angle_init));
+//		mEtMotor4Start.setText(String.valueOf(mMotion.Motors[3].angle_start));
+//		mEtMotor4Stop.setText(String.valueOf(mMotion.Motors[3].angle_stop));
+//		mEtMotor4Delay.setText(String.valueOf(mMotion.Motors[3].delay_time));
+//		mEtMotor4Hold.setText(String.valueOf(mMotion.Motors[3].hold_time));
+//		mEtMotor4Repeat.setText(String.valueOf(mMotion.Motors[3].repeat_count));
+//
+//		mSpSoundType.setSelection(mMotion.Sound.type);
+//		mEtSoundDelay.setText(String.valueOf(mMotion.Sound.delay_time));
+//		
+//		mEtLedBlink.setText(String.valueOf(mMotion.Led.blink));
+//		mEtLedDelay.setText(String.valueOf(mMotion.Led.delay_time));	
 	}
 }

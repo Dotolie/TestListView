@@ -32,6 +32,7 @@ public class TestListViewActivity extends Activity {
 	private TextView mTvActionItems = null;
 	
 	private int mCount = 0;
+	private int mPosition = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,8 @@ public class TestListViewActivity extends Activity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
+				
+				mPosition = position;
 				
 				Motion motionObject = mActionList.get(position);
 				
@@ -147,7 +150,8 @@ public class TestListViewActivity extends Activity {
 		switch( requestCode ) {
 		case RequestCode2Config:
 			if( resultCode == RESULT_OK) {
-				Motion motion = (Motion)getIntent().getSerializableExtra("MotionObject");
+				Motion motion = (Motion)data.getSerializableExtra("MotionObject");
+				Motion tmp = mActionList.set(mPosition, motion);
 				Log.d(TAG, "received intent OK");
 			}
 			else {
