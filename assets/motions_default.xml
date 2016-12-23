@@ -7,33 +7,33 @@
             <value>10</value>
         </sensor>
         <motor id="0">
-            <init>3</init>
-            <start>0</start>
+            <init>0</init>
+            <start>-5</start>
             <stop>5</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="1">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>3</start>
+            <stop>-3</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="2">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-1</start>
+            <stop>1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="3">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>2</start>
+            <stop>-2</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
@@ -54,33 +54,33 @@
             <value>10</value>
         </sensor>
         <motor id="0">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-1</start>
+            <stop>1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="1">
-            <init>3</init>
-            <start>0</start>
+            <init>0</init>
+            <start>-5</start>
             <stop>5</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="2">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>2</start>
+            <stop>2</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="3">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>3</start>
+            <stop>3</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
@@ -101,33 +101,33 @@
             <value>10</value>
         </sensor>
         <motor id="0">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>1</start>
+            <stop>-1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="1">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-1</start>
+            <stop>1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="2">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>1</start>
+            <stop>-1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="3">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>2</start>
+            <stop>-2</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
@@ -148,23 +148,23 @@
             <value>10</value>
         </sensor>
         <motor id="0">
-            <init>3</init>
+            <init>0</init>
             <start>0</start>
-            <stop>5</stop>
+            <stop>0</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="1">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-2</start>
+            <stop>2</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="2">
-            <init>3</init>
+            <init>0</init>
             <start>0</start>
             <stop>5</stop>
             <delay>100</delay>
@@ -172,9 +172,9 @@
             <repeat>5</repeat>
         </motor>
         <motor id="3">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>3</start>
+            <stop>0</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
@@ -195,33 +195,33 @@
             <value>10</value>
         </sensor>
         <motor id="0">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-1</start>
+            <stop>1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="1">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>-1</start>
+            <stop>1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="2">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>2</start>
+            <stop>-2</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>
         </motor>
         <motor id="3">
-            <init>3</init>
-            <start>0</start>
-            <stop>5</stop>
+            <init>0</init>
+            <start>1</start>
+            <stop>-1</stop>
             <delay>100</delay>
             <hold>80</hold>
             <repeat>5</repeat>

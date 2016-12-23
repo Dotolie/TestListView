@@ -27,6 +27,7 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 		super(c, textViewResourceId, arrays);
 		this.inflater = LayoutInflater.from(c);
 		this.mContext = c;
+		this.infoList = arrays;
 	}
 
 	@Override
@@ -65,6 +66,7 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 		}else {
 			viewHolder = (ViewHolder)v.getTag();
 		}
+
 		
 		viewHolder.tv_no.setText(String.valueOf(getItem(position).no));
 		viewHolder.tv_no.setTag(position);
@@ -95,6 +97,8 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 		else 
 			viewHolder.iv_image.setImageResource(R.drawable.action);
 
+		viewHolder.cb_box.setChecked(getItem(position).checked);
+		
 		return v;
 	}
 	
@@ -137,6 +141,10 @@ public class CustomArrayAdapter extends ArrayAdapter<Motion>{
 
 				// CheckBox
 			case R.id.cb_box:
+				position = Integer.parseInt( v.getTag().toString() );
+				Motion motion = getItem(position);
+				motion.checked = !motion.checked;
+				
 				Toast.makeText(
 						mContext, 
 						"체크박스 Tag = " + v.getTag(),

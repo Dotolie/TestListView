@@ -11,6 +11,7 @@ public class Motion implements Serializable {
 	public Motor[] Motors;
 	public Sound Sound;
 	public Led Led;
+	public boolean checked = false;
 	
 
 	public Motion() { }

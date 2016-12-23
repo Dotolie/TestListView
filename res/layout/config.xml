@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
 
     </TableRow>
@@ -96,8 +96,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
-            android:text="5" />
+            android:inputType="numberSigned"
+            android:text="-5" />
 
         <TextView
             android:id="@+id/textView2"
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="1" />
 
         <TextView
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -141,7 +141,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
 
         <TextView
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -171,7 +171,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
 
     </TableRow>
@@ -202,7 +202,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
 
         <TextView
@@ -217,7 +217,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="1" />
 
         <TextView
@@ -232,7 +232,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -247,7 +247,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
 
         <TextView
@@ -262,7 +262,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -277,7 +277,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
     </TableRow>
 
@@ -307,7 +307,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
 
         <TextView
@@ -322,7 +322,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="1" />
 
         <TextView
@@ -337,7 +337,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -352,7 +352,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
 
         <TextView
@@ -367,7 +367,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -382,7 +382,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
     </TableRow>
 
@@ -411,7 +411,7 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
 
         <TextView
@@ -426,7 +426,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="1" />
 
         <TextView
@@ -441,7 +441,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -456,7 +456,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
 
         <TextView
@@ -471,7 +471,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="12" />
 
         <TextView
@@ -486,7 +486,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="5" />
     </TableRow>
 
@@ -528,7 +528,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
     </TableRow>
 
@@ -557,7 +557,7 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="0" />
 
         <TextView
@@ -572,7 +572,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="center_vertical|right"
-            android:inputType="number"
+            android:inputType="numberSigned"
             android:text="50" />
     </TableRow>
 

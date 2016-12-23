@@ -47,6 +47,7 @@ public class TestListViewActivity extends Activity {
 	private Button mBtnDeletes = null;
 	private Button mBtnSave = null;
 	private TextView mTvActionItems = null;
+	private ListView mListView = null;
 	
 	private int mCount = 0;
 	private int mPosition = 0;
@@ -80,6 +81,31 @@ public class TestListViewActivity extends Activity {
 						).show();
 			}
 		});
+        
+        mListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+			@Override
+			public boolean onItemLongClick(AdapterView<?> arg0, View view, int position, long arg3) {
+				if( position >= 4 ) {
+					mCustomArrayAdaptor.remove(mCustomArrayAdaptor.getItem(position));
+					mCustomArrayAdaptor.notifyDataSetChanged();
+
+					runOnUiThread(new Runnable() {
+						@Override
+						public void run() {
+							mCount = mMotionList.size();
+							mTvActionItems.setText(""+mCount);	
+						}
+					});
+
+					Toast.makeText(
+							getApplicationContext(), 
+							"Delete Motion = " + position,
+							Toast.LENGTH_SHORT
+							).show();					
+				}
+				return true;
+			}
+		});
     }
     
     private void setViews() {
@@ -102,13 +128,19 @@ public class TestListViewActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				mCount = mMotionList.size();
-				if( mCount>0) {
-					mCount--;
-					mMotionList.remove(mCount);
+				if( mCount>4) {
+					for( int i=mCount-1;i>=4;i--) {
+						if( mMotionList.get(i).checked) {
+							mCustomArrayAdaptor.remove(mCustomArrayAdaptor.getItem(i));
+							mListView.clearChoices();
+						}
+					}
+					
 					
 					runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
+							mCount = mMotionList.size();
 							mTvActionItems.setText(""+mCount);
 						}
 					});
@@ -352,20 +384,20 @@ public class TestListViewActivity extends Activity {
     }
     
     private void addNewMotion() {
-		Sensor sensor = new Sensor(5,10);
+		Sensor sensor = new Sensor(0,0);
 		Motor[] motors = { 
-				new Motor(1,0,9,100,50,5),
-				new Motor(2,0,9,100,50,5),
-				new Motor(3,0,9,100,50,5),
-				new Motor(4,0,9,100,50,5)
+				new Motor(0,-5,5,100,50,5),
+				new Motor(0,-4,4,100,40,4),
+				new Motor(0,-3,3,100,30,3),
+				new Motor(0,-2,2,100,20,2)
 				};
-		Sound sound = new Sound(3, 100);
-		Led led = new Led(5, 20);
+		Sound sound = new Sound(1, 100);
+		Led led = new Led(1, 20);
 
 		mCount = mMotionList.size();
 		Motion motion = new Motion(
 				mCount,
-				"User Motion", 
+				"User Motion="+mCount, 
 				sensor,
 				motors,
 				sound,
@@ -377,6 +409,7 @@ public class TestListViewActivity extends Activity {
 		runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
+				mCount = mMotionList.size();
 				mTvActionItems.setText(""+mCount);	
 			}
 		});
@@ -527,7 +560,6 @@ public class TestListViewActivity extends Activity {
     	
     }
     
-	private ListView mListView = null;
     
     private void setLayout(){
     	mListView = (ListView) findViewById(R.id.lv_list);
